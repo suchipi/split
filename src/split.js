@@ -16,7 +16,7 @@ function getDelim() {
     return /\s+/g;
   }
 
-  if (argsString.match(/^\\[bfnrtv]$/)) {
+  if (argsString.match(/^(?:\\[bfnrtv])+$/)) {
     const value = new Function(`return "${argsString}"`)();
     return value;
   }
